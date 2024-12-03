@@ -32,12 +32,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
             
             } else {
-                alert(result.message || 'Login failed. Please try again.');
+                alert("result.message || 'Login failed. Please try again."');
                 console.error('Error response:', result);
             }
         } catch (error) {
             console.error('Network or server error:', error);
-            alert('An error occurred while processing your request. Please try again later.');
+            alert(`CORS Issue:
+                Requests to the API (http://15.206.133.74/user/login) are currently blocked due to a CORS policy issue. The backend server must include the Access-Control-Allow-Origin header in its responses to resolve this issue.
+                `);
         }
     });
 });
